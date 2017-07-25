@@ -46,7 +46,7 @@ namespace WpfGameOfLife.ViewModel
                 SimpleIoc.Default.Register<GameViewModel>();
             }
 
-            SimpleIoc.Default.Register<MainViewModel>();
+            //SimpleIoc.Default.Register<MainViewModel>();
         }
 
         //public MainViewModel Main
