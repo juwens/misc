@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="WpfGameOfLife.Views.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfGameOfLife.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding Game, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="{Binding BoardImage}"/>
+        <StackPanel Grid.Column="1">
+            <UniformGrid Rows="1">
+                <TextBox />
+                <TextBox />
+            </UniformGrid>
+            <Button Content="Init" Command="{Binding InitCmd}" />
+            <Button Content="Start / Stop" Command="{Binding StartStopCmd}" />
+            <Button Content="Step" Command="{Binding StepCmd}" />
+            <Slider />
+            <TextBlock Text="{Binding Gen, StringFormat={}Generation: {0}}" />
+        </StackPanel>
+    </Grid>
+</UserControl>
